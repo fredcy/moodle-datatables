@@ -3,7 +3,7 @@
 namespace tool_datatables;
 require(__DIR__ . '/../../../config.php');
 require_once($CFG->libdir . '/adminlib.php');
-#require_once(__DIR__ . '/lib.php');
+require_once(__DIR__ . '/lib.php');
 
 // Get some data to load into an example table
 $fields = "username,firstname,lastname,lastaccess,auth";
@@ -29,14 +29,15 @@ $PAGE->set_title($title);       // TITLE element value in HEAD
 $PAGE->set_heading($title);     // just below logo
 /*
 $PAGE->requires->js_amd_inline(js_datatables());
+*/
+$params = array("select" => true, "paginate" => true);
+$PAGE->requires->js_call_amd('tool_datatables/init', 'init', array($params));
 foreach ($css_urls as $url) {
     $PAGE->requires->css(new \moodle_url($url));
 }
-*/
-$PAGE->requires->js_call_amd('tool_datatables/init', 'test', array());
+
 echo $OUTPUT->header();
 
-echo "Hello from datatables plugin";
 $renderer = $PAGE->get_renderer('tool_datatables');
 echo $renderer->test(array('users' => $usersa));
 
