@@ -1,4 +1,6 @@
-define(['jquery', 'tool_datatables/jquery.dataTables', 'tool_datatables/dataTables.bootstrap'],
+define(['jquery', 'tool_datatables/jquery.dataTables', 'tool_datatables/dataTables.bootstrap',
+	'tool_datatables/dataTables.select', 'tool_datatables/dataTables.buttons',
+	'tool_datatables/buttons.bootstrap'],
        function ($, datatables) {
 	   return {
 	       test: function() {
@@ -11,6 +13,7 @@ define(['jquery', 'tool_datatables/jquery.dataTables', 'tool_datatables/dataTabl
 		       'autoWidth': false,
 		       'paginate': false,
 		       'order': [],		// disable initial sort
+		       //'dom': 'Bfrtip', // locate the buttons
 		   };
 		   for (var attrname in params) {
 		       options[attrname] = params[attrname];

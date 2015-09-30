@@ -27,14 +27,13 @@ admin_externalpage_setup('datatables_test');
 $title = get_string('pluginname', 'tool_datatables');
 $PAGE->set_title($title);       // TITLE element value in HEAD
 $PAGE->set_heading($title);     // just below logo
-/*
-$PAGE->requires->js_amd_inline(js_datatables());
-*/
-$params = array("select" => true, "paginate" => true);
+
+$params = array("select" => true, "paginate" => false);
+$params['buttons'] = array("selectAll", "selectNone");
+$params['dom'] = 'Bfrtip';
 $PAGE->requires->js_call_amd('tool_datatables/init', 'init', array($params));
-foreach ($css_urls as $url) {
-    $PAGE->requires->css(new \moodle_url($url));
-}
+$PAGE->requires->css('/admin/tool/datatables/style/dataTables.bootstrap.css');
+$PAGE->requires->css('/admin/tool/datatables/style/select.bootstrap.css');
 
 echo $OUTPUT->header();
 
