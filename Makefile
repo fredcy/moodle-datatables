@@ -12,7 +12,7 @@ ORIGINALS := $(wildcard $(ORIG_DIR)/*.js)
 OBJ := $(patsubst $(ORIG_DIR)/%,$(BUILD_DIR)/%,$(ORIGINALS))
 
 $(BUILD_DIR)/%.js: $(ORIG_DIR)/%.js
-	perl -C convert.pl $< >$@
+	perl -C convert.pl $< | uglifyjs - --compress --manage --output $@
 
 convert: $(OBJ)
 
