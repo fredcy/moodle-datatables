@@ -43,6 +43,12 @@ Useful links
 * [Issue tracker](https://github.com/fredcy/moodle-datatables/issues)
 * [DataTables documentation](https://datatables.net/)
 
+Licence
+---
+The javascript files in the amd/orig directory are copied from the DataTables website and have their own license. The corresponding converted files within amd/build should inherit that same license. The style/css files also come from DataTables and retain their licence. These files do not interact with Moodle core or APIs.
+
+The remaining files are new and have the GNU GPL v3 licence. See COPYING.txt.
+
 Contributor
 ---
 [Fred Yankowski](https://moodle.org/user/profile.php?id=843666)
