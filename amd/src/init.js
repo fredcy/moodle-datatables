@@ -15,8 +15,6 @@ define(['jquery', 'tool_datatables/jquery.dataTables', 'core/log',
 		       'autoWidth': false,
 		       'paginate': false,
 		       'order': [],		// disable initial sort
-		       'buttons': [],
-		       'dom': 'Bftrip',		// position buttons
 		   };
 		   $.extend(true, options, params); // deep-merge params into options
 		   for (var attrname in params) {
