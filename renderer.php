@@ -1,5 +1,4 @@
 <?php
-#error_log("renderer.php called");
 // This file is included magically by the moodle core upon calling
 // get_renderer('tool_datatables').
 
@@ -13,7 +12,7 @@ class tool_datatables_renderer extends \plugin_renderer_base {
             $data['users'][$key]['lastaccess_str'] = $accesstime->format('Y-m-d');
         }
 
-        $out = $this->output->heading('Users');
+        $out = $this->output->heading(get_string('Users', 'tool_datatables'));
         $out .= $this->output->render_from_template("tool_datatables/test", $data);
         #$out .= ('<pre>' . print_r($data, true) . '</pre>');
         return $out;

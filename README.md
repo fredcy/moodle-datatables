@@ -29,12 +29,13 @@ $THEME->javascripts_footer = array("datatables");
 The above general scheme allows one to apply DataTables to any table in the moodle core or plugins as long as one can construct the necessary CSS/jQuery selector to select those tables. In the above,
 `#page-admin-report-customsql-index .generaltable` is the selector.
 
-See test.php for an example page that employs DataTables. The simplest case adds this to the page definition:
+See test.php for an example plugin page that employs DataTables. The simplest case adds this to the page definition:
 
 ```
-$PAGE->requires->js_call_amd('tool_datatables/init', 'init', array('.datatable', array()));
+$PAGE->requires->js_call_amd('tool_datatables/init', 'init',
+                             array('.datatable', array()));
 ```
-Any table with the `datatable` class (matching the `.datatable` selector above) will get default DataTables features. The second parameter allows for passing options to DataTables.
+Any table with the `datatable` class (matching the `.datatable` selector above) will get default DataTables features. The second parameter allows for passing options to DataTables, just an empty `array()` in this case.
 
 
 Useful links
