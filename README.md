@@ -37,6 +37,12 @@ $PAGE->requires->js_call_amd('tool_datatables/init', 'init',
 ```
 Any table with the `datatable` class (matching the `.datatable` selector above) will get default DataTables features. The second parameter allows for passing options to DataTables, just an empty `array()` in this case.
 
+Design
+---
+This plugin packages the DataTables javascript code as an AMD module per
+[JavaScript Modules](https://docs.moodle.org/dev/Javascript_Modules). The original javascript code downloaded from datatables.net sits in the amd/orig directory. The Makefile rules modify that code slightly to work in the Moodle context, generating corresponding files in amd/src. On a build machine we run the grunt tool to generate the files in amd/build. All of the generated files are saved in the code repository and in the plugin zip file so that this plugin can be installed directly without use of the Makefile or grunt.
+
+An alternative design would have referenced the DataTables javascript code directly from an external CDN rather than copying it to locally served files. I found that approach hard to integrate with the way Moodle configures Require.js.
 
 Useful links
 ---
