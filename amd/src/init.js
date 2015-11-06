@@ -8,6 +8,8 @@ define(['jquery', 'tool_datatables/jquery.dataTables', 'core/log',
 		   window.console.log('datatables is:'); window.console.log(datatables);
 	       },
 	       init: function(selector, params) {
+		   // Configure element matched by selector as a DataTable,
+		   // adding params to the default options.
 		   if (params.debug) {
 		       window.console.log('tool_datatables:init.js/init(): ', selector, params);
 		   }
@@ -17,9 +19,6 @@ define(['jquery', 'tool_datatables/jquery.dataTables', 'core/log',
 		       'order': [],		// disable initial sort
 		   };
 		   $.extend(true, options, params); // deep-merge params into options
-		   for (var attrname in params) {
-		       options[attrname] = params[attrname];
-		   }
 		   if (params.debug) {
 		       window.console.log('tool_datatables init.js/init(): options = ', options);
 		   }

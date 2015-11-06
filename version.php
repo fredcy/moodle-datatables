@@ -20,7 +20,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$plugin->version  = 2015100200;
+$plugin->version  = 2015110600;
 $plugin->requires = 2015050500;
 $plugin->component = 'tool_datatables';
 $plugin->maturity = MATURITY_BETA;

@@ -15,7 +15,8 @@ plugin, add a javascript/datatables.js file to your theme with this content:
 ```
 require(['core/first'], function() {
     require(['tool_datatables/init'], function(dt) {
-        dt.init('#page-admin-report-customsql-index .generaltable', {});
+        selector = '#page-admin-report-customsql-index .generaltable, #page-admin-report-customsql-view .generaltable';
+        dt.init(selector, {});
     });
 });
 ```
@@ -26,8 +27,7 @@ and add this to the admin theme's config.php:
 $THEME->javascripts_footer = array("datatables");
 ```
 
-The above general scheme allows one to apply DataTables to any table in the moodle core or plugins as long as one can construct the necessary CSS/jQuery selector to select those tables. In the above,
-`#page-admin-report-customsql-index .generaltable` is the selector.
+The above general scheme allows one to apply DataTables to any table in the moodle core or plugins as long as one can construct the necessary CSS/jQuery selector to select those tables.
 
 See test.php for an example plugin page that employs DataTables. The simplest case adds this to the page definition:
 
@@ -40,7 +40,7 @@ Any table with the `datatable` class (matching the `.datatable` selector above) 
 
 Useful links
 ---
-* [Code repository](https://github.com/fredcy/moodle-datatables)
+* [Code repository](https://github.com/fredcy/moodle-tool_datatables)
 * [Issue tracker](https://github.com/fredcy/moodle-datatables/issues)
 * [DataTables documentation](https://datatables.net/)
 

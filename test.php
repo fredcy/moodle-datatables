@@ -1,15 +1,20 @@
 <?php
-
 namespace tool_datatables;
 require(__DIR__ . '/../../../config.php');
 require_once($CFG->libdir . '/adminlib.php');
-require_once(__DIR__ . '/lib.php');
+
+// Define an example page that shows DataTables in use.
 
 // Get some data to load into an example table
 $fields = "username,firstname,lastname,lastaccess,auth";
+$firstinitial = '';
 $lastinitial = 'k';             // limit results in testing
+$page = '';
+$recordsperpage = 9999;
 $users = get_users(true, '', false, array(), 'lastname ASC',
-                   '', $lastinitial, '', '', $fields);
+                   $firstinitial, $lastinitial, $page, $recordsperpage, $fields);
+
+// Convert from array-of-objects to array-of-arrays as needed by templates.
 $usersa = array();
 foreach ($users as $user) {
     $u = array('username'   => $user->username,
