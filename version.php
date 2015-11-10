@@ -13,15 +13,17 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
- 
+
 /**
+ * Version information for package.
+ *
  * @package   tool_datatables
  * @copyright 2015, Fred Yankowski <fredcy@gmail.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$plugin->version  = 2015110600;
+$plugin->version  = 2015111000;
 $plugin->requires = 2015050500;
 $plugin->component = 'tool_datatables';
 $plugin->maturity = MATURITY_BETA;
-$plugin->release = 'v0.1 for Moodle 2.9+';
+$plugin->release = 'v0.2 for Moodle 2.9+';

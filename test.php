@@ -1,14 +1,36 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle. If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Create test admin page showing DataTables in use.
+ *
+ * @package		tool_datatables
+ * @copyright	2015 Frederick C. Yankowski
+ * @license		http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 namespace tool_datatables;
 require(__DIR__ . '/../../../config.php');
 require_once($CFG->libdir . '/adminlib.php');
 
 // Define an example page that shows DataTables in use.
 
-// Get some data to load into an example table
+// Get some data to load into an example table.
 $fields = "username,firstname,lastname,lastaccess,auth";
 $firstinitial = '';
-$lastinitial = 'k';             // limit results in testing
+$lastinitial = 'k';             // Limit results in testing.
 $page = '';
 $recordsperpage = 9999;
 $users = get_users(true, '', false, array(), 'lastname ASC',
@@ -26,17 +48,15 @@ foreach ($users as $user) {
     $usersa[] = $u;
 }
 
-//////////////////
-
 admin_externalpage_setup('datatables_test');
 $title = get_string('pluginname', 'tool_datatables');
-$PAGE->set_title($title);       // TITLE element value in HEAD
-$PAGE->set_heading($title);     // just below logo
+$PAGE->set_title($title);
+$PAGE->set_heading($title);
 
-// Set up DataTable with passed options
+// Set up DataTable with passed options.
 $params = array("select" => true, "paginate" => false);
 $params['buttons'] = array("selectAll", "selectNone");
-$params['dom'] = 'Bfrtip';      // needed to position buttons; else won't display
+$params['dom'] = 'Bfrtip';      // Needed to position buttons; else won't display.
 $selector = '.datatable';
 $PAGE->requires->js_call_amd('tool_datatables/init', 'init', array($selector, $params));
 

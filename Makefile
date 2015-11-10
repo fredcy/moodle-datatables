@@ -23,4 +23,9 @@ $(OBJ): convert.pl
 clean:
 	-rm $(OBJ)
 
+DISTFILE := tool_datatables.zip
+
+dist:
+	cd .. && { rm -f $(DISTFILE); zip -r $(DISTFILE) datatables -x 'datatables/.git*' '*~'; }
+
 .PHONY: all clean convert purge grunt

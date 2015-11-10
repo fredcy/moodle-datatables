@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<libraries>
+  <library>
+    <location>admin/tool/datatables/amd/orig</location>
+    <name>DataTables</name>
+    <license>MIT</license>
+    <version>1.10.9</version>
+  </library>
+</libraries>
