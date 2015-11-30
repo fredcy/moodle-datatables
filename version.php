@@ -22,8 +22,8 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$plugin->version  = 2015111000;
+$plugin->version  = 2015113000;
 $plugin->requires = 2015050500;
 $plugin->component = 'tool_datatables';
-$plugin->maturity = MATURITY_BETA;
-$plugin->release = 'v0.2 for Moodle 2.9+';
+$plugin->maturity = MATURITY_RC;
+$plugin->release = 'v0.3 for Moodle 2.9+';
