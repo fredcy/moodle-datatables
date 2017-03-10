@@ -30,7 +30,7 @@ require_once($CFG->libdir . '/adminlib.php');
 // Get some data to load into an example table.
 $fields = "username,firstname,lastname,lastaccess,auth";
 $firstinitial = '';
-$lastinitial = 'k';             // Limit results in testing.
+$lastinitial = '';             // Limit results in testing.
 $page = '';
 $recordsperpage = 9999;
 $users = get_users(true, '', false, array(), 'lastname ASC',
